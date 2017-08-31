@@ -1,0 +1,198 @@
+.sAlert-wrap {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-animation: 0.5s inWrap forwards;
+          animation: 0.5s inWrap forwards;
+}
+.sAlert-wrap:after {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+.sAlert-wrap.out {
+  -webkit-animation: 0.2s outWrap;
+          animation: 0.2s outWrap;
+}
+.sAlert-wrap.out .sAlert-main {
+  -webkit-animation: 0.2s outMain;
+          animation: 0.2s outMain;
+}
+.sAlert-main {
+  background-color: #fff;
+  border-radius: 5px;
+  position: absolute;
+  width: 75%;
+  max-width: 300px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 2;
+  overflow: hidden;
+  -webkit-animation: 0.3s inMain forwards;
+          animation: 0.3s inMain forwards;
+}
+.sAlert-head {
+  text-align: center;
+  line-height: 2.5rem;
+  color: #aaa;
+  font-size: .875rem;
+  position: relative;
+}
+.sAlert-head:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid #efefef;
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+  -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+}
+.sAlert-cont {
+  padding: 30px;
+}
+.sAlert-text.text-left {
+  text-align: left;
+}
+.sAlert-text.text-right {
+  text-align: right;
+}
+.sAlert-text.text-center {
+  text-align: center;
+}
+.sAlert-foot {
+  text-align: center;
+  display: -webkit-flex;
+  display: flex;
+  position: relative;
+}
+.sAlert-foot:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1px solid #efefef;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+}
+.sAlert-foot > .btn {
+  -webkit-flex: 1;
+          flex: 1;
+  height: 50px;
+  line-height: 50px;
+  background-color: #fff;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+          appearance: none;
+  border: 0;
+  transition: all 0.5s;
+  cursor: pointer;
+  position: relative;
+}
+.sAlert-foot > .btn:focus {
+  outline: none;
+}
+.sAlert-foot > .btn:active {
+  background-color: #f9f9f9;
+}
+.sAlert-foot > .btn:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  bottom: 0;
+  border-left: 1px solid #efefef;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scaleX(0.5);
+          transform: scaleX(0.5);
+}
+.sAlert-foot > .btn:first-child:after {
+  display: none;
+}
+.sAlert-foot > .btn.okBtn,
+.sAlert-foot > .btn.submitBtn {
+  color: #58AD2C;
+}
+.sAlert-foot > .btn.cancelBtn {
+  color: #666;
+}
+@-webkit-keyframes inWrap {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes inWrap {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes inMain {
+  from {
+    top: 150%;
+  }
+  to {
+    top: 40%;
+  }
+}
+@keyframes inMain {
+  from {
+    top: 150%;
+  }
+  to {
+    top: 40%;
+  }
+}
+@-webkit-keyframes outWrap {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes outWrap {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes outMain {
+  from {
+    top: 40%;
+  }
+  to {
+    top: 150%;
+  }
+}
+@keyframes outMain {
+  from {
+    top: 40%;
+  }
+  to {
+    top: 150%;
+  }
+}
