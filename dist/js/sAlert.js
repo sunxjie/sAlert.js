@@ -2,7 +2,7 @@
  * 模拟 Alert/confirm 对话框
  * @author sunxjie
  * @date 2017.08
- * @github https://github.com/sunxjie/sAlert
+ * @github https://github.com/sunxjie/sAlert.js
  */
 
 ;
