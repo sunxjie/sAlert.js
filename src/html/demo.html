@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>sAlert demo</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no,
+                initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="full-screen" content="yes" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="description" content="" id="description" />
+    <link rel="stylesheet" href="css/sAlert.min.css" />
+    <script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script> -->
+    <script src="js/sAlert.js"></script>
+</head>
+
+<body>
+    <div style="padding: 30px;">
+        <button type="button" id="btn1">Alert</button>
+    </div>
+    <div style="padding: 30px;">
+        <button type="button" id="btn2">Confirm</button>
+    </div>
+    <div style="padding: 30px;">
+        <button type="button" id="btn3">Demo</button>
+    </div>
+
+    <script>
+    $(function() {
+        $('#btn1').click(function() {
+            $.sAlert({
+                title: "这是提示标题",
+                msg: "msg"
+            });
+        });
+        $('#btn2').click(function() {
+            $.sAlert({
+                title: "title",
+                msg: "msg",
+                type: "confirm",
+                confirm: {
+                    submitevent: function() {
+                        setTimeout(function() {
+                            $.sAlert({
+                                title: "提示标题",
+                                msg: "新写法不错哦~"
+                            });
+                        }, 300);
+                    }
+                }
+            });
+        });
+        $('#btn3').click(function() {
+            $.sAlert({
+                title: "提示标题",
+                msg: "新写法不错哦~"
+            });
+        });
+    });
+    </script>
+</body>
+
+</html>
