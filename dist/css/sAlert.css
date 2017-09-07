@@ -17,12 +17,12 @@
   z-index: 1;
 }
 .sAlert-wrap.out {
-  -webkit-animation: 0.2s outWrap;
-          animation: 0.2s outWrap;
+  -webkit-animation: 0.5s outWrap;
+          animation: 0.5s outWrap;
 }
 .sAlert-wrap.out .sAlert-main {
-  -webkit-animation: 0.2s outMain;
-          animation: 0.2s outMain;
+  -webkit-animation: 0.5s outMain;
+          animation: 0.5s outMain;
 }
 .sAlert-main {
   background-color: #fff;
@@ -61,13 +61,13 @@
 .sAlert-cont {
   padding: 30px;
 }
-.sAlert-text.text-left {
+.sAlert-cont.text-left {
   text-align: left;
 }
-.sAlert-text.text-right {
+.sAlert-cont.text-right {
   text-align: right;
 }
-.sAlert-text.text-center {
+.sAlert-cont.text-center {
   text-align: center;
 }
 .sAlert-foot {

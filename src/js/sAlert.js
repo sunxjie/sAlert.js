@@ -16,16 +16,18 @@
 
     $.sAlert = function(options) {
         var defaults = {
-            msg: "",
             title: "",
+            msg: "",
             textalign: "center",
             type: "alert",
             alert: {
-                oklabel: "确定"
+                alertlabel: "确定",
+                alertevent: function() {}
             },
             confirm: {
                 cancellabel: "取消",
                 submitlabel: "确定",
+                cancelevent: function() {},
                 submitevent: function() {}
             }
         };
@@ -46,12 +48,11 @@
             alertMain.append(alertHead = $('<div class="sAlert-head">' + opts.title + '</div>'));
         }
         alertMain.append(
-            alertCont = $('<div class="sAlert-cont" />'),
+            alertCont = $('<div class="sAlert-cont text-' + opts.textalign + '">' + opts.msg + '</div>'),
             alertFoot = $('<div class="sAlert-foot" />')
         );
-        alertCont.append(alertText = $('<div class="sAlert-text text-' + opts.textalign + '">' + opts.msg + '</div>'));
         if (opts.type == "alert") {
-            alertFoot.append(okBtn = $('<button class="btn okBtn">' + opts.alert.oklabel + '</button>'));
+            alertFoot.append(okBtn = $('<button class="btn okBtn">' + opts.alert.alertlabel + '</button>'));
         }
         if (opts.type == "confirm") {
             alertFoot.append(
@@ -59,9 +60,14 @@
                 submitBtn = $('<button class="btn submitBtn">' + opts.confirm.submitlabel + '</button>')
             );
         }
+
+        $("body").on("touchmove", function(event) {
+            event.preventDefault;
+        }, false)
     };
 
     $.sAlert.hide = function() {
+        $("body").unbind("touchmove");
         alertWrap.addClass('out').one('webkitAnimationEnd animationend', function() {
             alertWrap.remove();
         });
@@ -69,12 +75,12 @@
 
     $.sAlert.event = function() {
         $(okBtn).on('click', function() {
+            opts.alert.alertevent();
             $.sAlert.hide();
-            return false;
         });
         $(cancelBtn).on('click', function() {
+            opts.confirm.cancelevent();
             $.sAlert.hide();
-            return false;
         });
         $(submitBtn).on('click', function() {
             opts.confirm.submitevent();

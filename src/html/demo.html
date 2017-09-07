@@ -19,27 +19,47 @@
 
 <body>
     <div style="padding: 30px;">
-        <button type="button" id="btn1">Alert</button>
+        <button type="button" id="btn1">默认 Alert 弹窗</button>
     </div>
     <div style="padding: 30px;">
-        <button type="button" id="btn2">Confirm</button>
+        <button type="button" id="btn2">Alert 弹窗，自定义按钮事件</button>
     </div>
     <div style="padding: 30px;">
-        <button type="button" id="btn3">Demo</button>
+        <button type="button" id="btn3">默认 Confirm 弹窗</button>
+    </div>
+    <div style="padding: 30px;">
+        <button type="button" id="btn4">Demo</button>
     </div>
 
     <script>
     $(function() {
         $('#btn1').click(function() {
             $.sAlert({
-                title: "这是提示标题",
-                msg: "msg"
+                msg: "这是提示内容",
             });
         });
         $('#btn2').click(function() {
             $.sAlert({
+                title: "这是提示标题",
+                msg: "提示内容",
+                alert: {
+                    okevent: function() {
+                        $('#btn2').text($('#btn2').text() + "OK");
+                    }
+                }
+            });
+        });
+        $('#btn3').click(function() {
+            $.sAlert({
                 title: "title",
                 msg: "msg",
+                type: "confirm",
+            });
+        });
+        $('#btn4').click(function() {
+            $.sAlert({
+                title: "提示标题",
+                msg: "新写法不错哦~",
                 type: "confirm",
                 confirm: {
                     submitevent: function() {
@@ -48,15 +68,9 @@
                                 title: "提示标题",
                                 msg: "新写法不错哦~"
                             });
-                        }, 300);
+                        }, 600);
                     }
                 }
-            });
-        });
-        $('#btn3').click(function() {
-            $.sAlert({
-                title: "提示标题",
-                msg: "新写法不错哦~"
             });
         });
     });
