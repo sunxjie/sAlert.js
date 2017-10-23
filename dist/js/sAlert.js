@@ -1,6 +1,7 @@
 /**
  * 模拟 Alert/confirm 对话框
  * @author sunxjie
+ * @emain sunxjie@gmail.com
  * @date 2017.08
  * @github https://github.com/sunxjie/sAlert.js
  */
@@ -16,8 +17,8 @@
 
     $.sAlert = function(options) {
         var defaults = {
-            title: "",
             msg: "",
+            title: "",
             textalign: "center",
             type: "alert",
             alert: {
